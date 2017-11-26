@@ -1,0 +1,140 @@
+@import url(http://fonts.googleapis.com/css?family=Raleway:400,700,800);
+*,
+*:after,
+*:before {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+[tabindex="-1"]:focus {
+   outline: 0;
+}
+html {
+  height: 100%;
+}
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: #444;
+  color: #fffce1;
+  font-family: 'Raleway', Arial, sans-serif;
+}
+#root, .App, .primary {
+  height: 100%;
+}
+a {
+  color: #4e4a46;
+  text-decoration: none;
+}
+a:hover,
+a:focus {
+  color: #c94e50;
+}
+.signup-btn, .close-btn, .submit-btn {
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 0;
+  display: inline-block;
+  padding: 0.25em 0.5em;
+  -webkit-appearance: none;
+}
+.close-btn {
+  position: absolute;
+  right: 0;
+}
+.submit-btn {
+  background-color: white;
+  color: black;
+  margin-top: 2em;
+}
+.primary {
+  height: 100%;
+  padding: 3em 2em;
+  text-align: center;
+  background: #b4bad2;
+  color: #fffce1;
+  overflow: scroll;
+}
+h1 {
+  font-weight: 800;
+  font-size: 3.75em;
+}
+.modal {
+  text-align: center;
+}
+.modal h1 {
+  margin: 0;
+  padding-top: 1em;
+}
+.signup {
+  max-width: 400px;
+  margin: 0 auto;
+  padding-top: 2em;
+}
+.field {
+  display: block;
+  margin-top: 1em;
+  text-align: left;
+}
+.field span {
+  display: inline-block;
+  width: 30%;
+}
+.field input {
+  margin-left: 1em;
+}
+.field > input,
+.field > div {
+  display: inline-block;
+  width: 60%;
+}
+@media screen and (max-width: 40em) {
+  .primary {
+    font-size: 80%;
+  }
+  h1 {
+    padding-top: 1em;
+    font-size: 2.5em;
+  }
+}
+.m-menu-button {
+  position: fixed;
+  width: 36px;
+  height: 30px;
+  left: 36px;
+  top: 36px;
+}
+.m-menu-bars {
+  background: #373a47;
+}
+.m-menu {
+  background: #373a47;
+  padding: 2.5em 1.5em 0;
+  font-size: 1.15em;
+}
+.m-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.m-menu li {
+  margin: 0 0 1em;
+}
+.m-menu a {
+  color: #b8b7ad;
+}
+.m-menu a:hover,
+.m-menu a:focus {
+  color: #c94e50;
+}
+.m-item-list a {
+  padding: 0.8em;
+}
+.m-item-list a span {
+  margin-left: 10px;
+  font-weight: 700;
+}
+.m-close {
+  background: #bdc3c7;
+}
