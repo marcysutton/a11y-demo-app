@@ -2,5 +2,9 @@
 
 An application intended to demonstrate accessibility problems so they can be fixed in a live presentation at dotJS. 
 
-WARNING! The code patterns checked in in this app are intentionally inaccessible.
+Important Areas:
 
+- Focus management: sidebar menu and modal
+- Semantic UI controls
+- Inert
+- Color contrast
