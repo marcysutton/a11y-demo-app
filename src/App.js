@@ -13,22 +13,13 @@ import { PropsRoute } from './utils.js';
 // Views
 import Home from './home.js';
 import SignupForm from './signup-form.js';
-
 import Menu from './menu.js';
-
-// if (process.env.NODE_ENV !== 'production') {
-//   document.addEventListener('focusin', function() {
-//     console.log(document.activeElement);
-//   });
-// }
 
 const Favorites = () => (
   <div>
     <h2>Favorites</h2>
   </div>
 )
-
-// Modal.setAppElement('#root');
 
 let modalStyles = {
   overlay : {
@@ -38,19 +29,7 @@ let modalStyles = {
 }
 class App extends Component {
   isMenuOpen(state) {
-    if (state.isOpen) {
-      let item = ReactDOM.findDOMNode(this.refs.firstItem);
-      setTimeout(function() {
-        item.focus();
-      }, 100);
-    }
     return state.isOpen;
-  }
-  pageFocus(ref) {
-    if (this[ref]) {
-      this.setState({menuOpen: false})
-      this[ref].focus();
-    }
   }
 
   constructor (props) {
@@ -71,9 +50,7 @@ class App extends Component {
               onStateChange={ this.isMenuOpen.bind(this) }>
               <ul>
                 <li><Link 
-                  to="/"
-                  onClick={this.pageFocus.bind(this, 'main')}
-                  ref="firstItem">
+                  to="/">
                     <i className="fa fa-fw fa-home" />
                     <span>Home</span>
                 </Link></li>
@@ -100,9 +77,7 @@ class App extends Component {
             <header className="App-header">
               <h1 className="App-title">a11y demo app</h1>
             </header>
-            <main
-              tabIndex="-1"
-              ref={(node) => this.main = node}>
+            <main>
               <PropsRoute exact path="/" component={Home} onUpdate={this.onUpdate.bind(this)}/>
               <Route path="/favorites" component={Favorites}/>
             </main>
@@ -113,11 +88,11 @@ class App extends Component {
             className="modal"
             style={modalStyles}
           >
-            <button 
+            <div 
               className="close-btn"
               onClick={this.onUpdate.bind(this, false)}>
               X
-            </button>
+            </div>
             {SignupForm}
           </Modal>
         </div>

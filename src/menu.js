@@ -107,7 +107,6 @@ export default class Menu extends Component {
           id={this.props.id}
           className={`m-menu-wrap ${this.props.className}`}
           style={this.getStyles('menuWrap')}
-          inert={this.state.isOpen ? null : ''}
         >
           <div className={`m-menu ${this.props.menuClassName}`} style={this.getStyles('menu')} >
             <nav className={`m-item-list ${this.props.itemListClassName}`}>
@@ -128,7 +127,6 @@ export default class Menu extends Component {
           onClick={() => this.toggleMenu()}
           className={this.props.menuButtonClassName}
           barClassName={this.props.menuBarClassName}
-          ref="menuIcon"
         />
       </div>
     );
