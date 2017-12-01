@@ -20,6 +20,14 @@ body {
 #root, .App, .primary {
   height: 100%;
 }
+.primary {
+  height: 100%;
+  padding: 3em 2em;
+  text-align: center;
+  background: #b4bad2;
+  color: #fffce1;
+  overflow: scroll;
+}
 a {
   color: #4e4a46;
   text-decoration: none;
@@ -46,19 +54,12 @@ a:focus {
   color: black;
   margin-top: 2em;
 }
-.primary {
-  height: 100%;
-  padding: 3em 2em;
-  text-align: center;
-  background: #b4bad2;
-  color: #fffce1;
-  overflow: scroll;
-}
 h1 {
   font-weight: 800;
   font-size: 3.75em;
 }
 .modal {
+  color: #fff;
   text-align: center;
 }
 .modal h1 {

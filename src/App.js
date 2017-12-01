@@ -31,7 +31,6 @@ class App extends Component {
   isMenuOpen(state) {
     return state.isOpen;
   }
-
   constructor (props) {
     super(props)
     this.state = { modalOpen: false, menuOpen: false }

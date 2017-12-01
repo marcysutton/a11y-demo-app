@@ -1,5 +1,3 @@
-// 'use strict';
-
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
@@ -25,7 +23,6 @@ export default class MenuIcon extends Component {
   render() {
     let icon;
     let buttonStyle = {
-      outline: 0,
       backgroundColor: 'transparent',
       margin: 0,
       padding: 0,
@@ -60,7 +57,7 @@ export default class MenuIcon extends Component {
         onMouseOver={() => this.setState({hover: true})}
         onMouseOut={() => this.setState({hover: false})}
         className={`m-menu-button ${this.props.className}`}
-        style={buttonStyle}        
+        style={buttonStyle}
         >
         {icon}
       </div>

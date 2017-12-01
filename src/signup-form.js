@@ -12,14 +12,8 @@ const SignupForm = (
       <input type="text" name="email" />
     </div>
     <div className="field">
-    	<span>Unisex t-shirt size</span>
-    	<div>
-	    	<input type="radio" name="size" value="XS" />
-	    	<input type="radio" name="size" value="S" />
-	    	<input type="radio" name="size" value="M" />
-	    	<input type="radio" name="size" value="L" />
-	    	<input type="radio" name="size" value="XL" />
-	    </div>
+    	<span>Subscribe to our newsletter?</span>
+    	<input type="checkbox" name="subscribe" value="Yes" />
     </div>
     <button className="submit-btn">Submit</button>
   </div>
