@@ -125,6 +125,7 @@ export default class Menu extends Component {
           onClick={() => this.toggleMenu()}
           className={this.props.menuButtonClassName}
           barClassName={this.props.menuBarClassName}
+          ref="menuIcon"
         />
       </div>
     );
