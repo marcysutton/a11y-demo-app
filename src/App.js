@@ -14,12 +14,7 @@ import { PropsRoute } from './utils.js';
 import Home from './home.js';
 import SignupForm from './signup-form.js';
 import Menu from './menu.js';
-
-const Favorites = () => (
-  <div>
-    <h2>Favorites</h2>
-  </div>
-)
+import GearList from './gearlist.js';
 
 let modalStyles = {
   overlay : {
@@ -38,7 +33,9 @@ class App extends Component {
   onUpdate(modalOpen) {
     this.setState({modalOpen});
   }
-
+  showModal() {
+    this.onUpdate(true)
+  }
   render() {
     return (
       <Router>
@@ -53,33 +50,38 @@ class App extends Component {
                     <i className="fa fa-fw fa-home" />
                     <span>Home</span>
                 </Link></li>
-                <li><Link to="/favorites">
+                <li><Link to="/gearlist">
+                    <i className="fa fa-fw fa-suitcase" />
+                    <span>Gear Packing List</span>
+                </Link></li>
+                <li><Link to="/trips">
+                    <i className="fa fa-fw fa-plane" />
+                    <span>Trip Suggestions</span>
+                </Link></li>
+                <li><Link to="/inspiration">
                     <i className="fa fa-fw fa-star" />
-                    <span>Favorites</span>
+                    <span>Inspiration</span>
                 </Link></li>
-                <li><Link to="/alerts">
-                    <i className="fa fa-fw fa-bell" />
-                    <span>Alerts</span>
-                </Link></li>
-                <li><Link to="/messages">
-                    <i className="fa fa-fw fa-envelope" />
-                    <span>Messages</span>
-                </Link></li>
-                <li><Link to="/comments">
-                    <i className="fa fa-fw fa-comment" />
-                    <span>Comments</span>
+                <li><Link to="/about">
+                    <i className="fa fa-fw fa-question-circle" />
+                    <span>About</span>
                 </Link></li>
               </ul>
             </Menu>
           </div>
           <div className="primary">
-            <header className="App-header">
-              <h1 className="App-title">a11y demo app</h1>
-            </header>
-            <main>
+            <div id="header" className="App-header">
+              <button
+                className="signup-btn"
+                onClick={this.showModal.bind(this)}>
+                <i className="fa fa-newspaper-o"></i>
+              </button>
+              <h1 className="App-title">ski trip organizer</h1>
+            </div>
+            <div id="main">
               <PropsRoute exact path="/" component={Home} onUpdate={this.onUpdate.bind(this)}/>
-              <Route path="/favorites" component={Favorites}/>
-            </main>
+              <Route path="/gearlist" component={GearList}/>
+            </div>
           </div>
           <Modal
             isOpen={this.state.modalOpen}

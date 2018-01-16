@@ -1,19 +1,81 @@
 import React, { Component } from 'react';
 
+const images = {
+  kuhtai: require('./images/kuhtai.jpg'),
+  kittenMittens: require('./images/kitten-mittens.jpg'),
+  bachelor: require('./images/mtbachelor.jpg'),
+  lb: require('./images/lb.jpg'),
+  baker: require('./images/IMG_0663.JPG')
+}
 class Home extends Component {
-  showModal() {
-    this.props.onUpdate(true)
-  }
   render() {
     return (
       <div className="homepage">
-        <h2>Home</h2>
-        <p>Skate ipsum dolor sit amet, feeble late Christ air salad grind. Bullet 66 Tracker slam Christ air kickflip. Gnar bucket bail transfer ledge Jerry Hsu. Face plant hip Claus Grabke soul skate Japan air. Baseplate airwalk hang-up hang ten. Bruised heel hanger Kien Lieu gnarly tail. Lien air downhill grind 720 Wes Humpston. 360 bearings slob air Shorty's locals. Fakie out bruised heel roll-in crailtap. Bail poseur ollie north pressure flip. Hang ten blunt frontside varial.</p>
-        <button
-          className="signup-btn"
-          onClick={this.showModal.bind(this)}>
-          Sign Up
-        </button>
+        <form id="tripPlanner">
+          <div>
+            <div className="button-wrap left">
+              <button type="button" title="My trips">
+                <i className="fa fa-star"></i>
+              </button>
+            </div>
+            <label className="fit">
+              <input type="text" placeholder="Name of trip" />
+            </label>
+            <label className="fit">
+              <input type="text" placeholder="Name of ski area" />
+            </label>
+            <div className="button-wrap">
+              <button type="button" className="expand" title="Expand">
+                <i className="fa fa-caret-down"></i>
+              </button>
+            </div>
+          </div>
+          <div>
+            <div className="inputGroup left">
+              <button type="button" aria-label="Select a previous date">
+                <i className="fa fa-caret-left"></i>
+              </button>
+              <label>
+                <input type="text" placeholder="16.1.18" />
+              </label>
+              <button type="button" aria-label="Select a later date">
+                <i className="fa fa-caret-right"></i>
+              </button>
+            </div>
+            <div className="button-wrap right">
+              <button type="button" aria-label="Date picker">
+                <i className="fa fa-calendar"></i>
+              </button>
+            </div>
+            <div className="select right">
+              <label>
+                <select>
+                  <option>Type of trip</option>
+                  <option>Alpine ski resort</option>
+                  <option>Backcountry</option>
+                  <option>Nordic</option>
+                </select>
+              </label>
+            </div>
+            <div className="button-wrap right">
+              <button className="submit">
+                Go
+              </button>
+            </div>
+          </div>
+        </form>
+        <div className="gallery">
+          <h2>Gallery</h2>
+          <div>
+            <figure><img src={images.kuhtai} alt="Snowy mountains in Austria" /></figure>
+            <figure><img src={images.lb} alt="Young girl on skis" /></figure>
+            <figure><img src={images.bachelor} alt="Snowy chairlifts at Mt. Bachelor" /></figure>
+          </div>
+          <div>
+            <figure><img src={images.baker} alt="Skier and snowboarder on a snowy blue sky day" /></figure>
+            <figure><img src={images.kittenMittens} alt="Mittens with cats on them and a purple helmet with goggles" /></figure>
+          </div>
+        </div>
       </div>
     )
   }
