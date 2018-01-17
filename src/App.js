@@ -16,6 +16,8 @@ import SignupForm from './signup-form.js';
 import Menu from './menu.js';
 import GearList from './gearlist.js';
 
+Modal.setAppElement('#root');
+
 let modalStyles = {
   overlay : {
     backgroundColor: 'rgba(68,68,68,.95)',
@@ -24,7 +26,18 @@ let modalStyles = {
 }
 class App extends Component {
   isMenuOpen(state) {
-    return state.isOpen;
+    if (state.isOpen) {
+      let item = ReactDOM.findDOMNode(this.refs.firstItem);
+      setTimeout(function() {
+        item.focus();
+      }, 100);
+    }
+  }
+  pageFocus(ref) {
+    if (this[ref]) {
+      this.setState({menuOpen: false});
+      this[ref].focus();
+    }
   }
   constructor (props) {
     super(props)
@@ -46,7 +59,9 @@ class App extends Component {
               onStateChange={ this.isMenuOpen.bind(this) }>
               <ul>
                 <li><Link 
-                  to="/">
+                  to="/"
+                  ref="firstItem"
+                  onClick={this.pageFocus.bind(this, 'main')}>
                     <i className="fa fa-fw fa-home" />
                     <span>Home</span>
                 </Link></li>
@@ -70,18 +85,19 @@ class App extends Component {
             </Menu>
           </div>
           <div className="primary">
-            <div id="header" className="App-header">
+            <header id="header" className="App-header">
               <button
                 className="signup-btn"
-                onClick={this.showModal.bind(this)}>
+                onClick={this.showModal.bind(this)}
+                aria-label="Subscribe to newsletter">
                 <i className="fa fa-newspaper-o"></i>
               </button>
               <h1 className="App-title">ski trip organizer</h1>
-            </div>
-            <div id="main">
+            </header>
+            <main id="main" ref={(node) => this.main = node} tabIndex="-1">
               <PropsRoute exact path="/" component={Home} onUpdate={this.onUpdate.bind(this)}/>
               <Route path="/gearlist" component={GearList}/>
-            </div>
+            </main>
           </div>
           <Modal
             isOpen={this.state.modalOpen}
@@ -89,11 +105,12 @@ class App extends Component {
             className="modal"
             style={modalStyles}
           >
-            <div 
+            <button 
               className="close-btn"
-              onClick={this.onUpdate.bind(this, false)}>
+              onClick={this.onUpdate.bind(this, false)}
+              aria-label="Close modal">
               X
-            </div>
+            </button>
             {SignupForm}
           </Modal>
         </div>

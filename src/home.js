@@ -15,40 +15,46 @@ class Home extends Component {
           <div>
             <div className="button-wrap left">
               <button type="button" title="My trips">
-                <i className="fa fa-star"></i>
+                <span className="offscreen">My trips</span>
+                <i aria-hidden="true" className="fa fa-star"></i>
               </button>
             </div>
             <label className="fit">
+              <span className="offscreen">Name of trip</span>
               <input type="text" placeholder="Name of trip" />
             </label>
             <label className="fit">
+              <span className="offscreen">Name of ski area</span>
               <input type="text" placeholder="Name of ski area" />
             </label>
             <div className="button-wrap">
               <button type="button" className="expand" title="Expand">
-                <i className="fa fa-caret-down"></i>
+                <span className="offscreen">Expand menu</span>
+                <i aria-hidden="true" className="fa fa-caret-down"></i>
               </button>
             </div>
           </div>
           <div>
             <div className="inputGroup left">
               <button type="button" aria-label="Select a previous date">
-                <i className="fa fa-caret-left"></i>
+                <i aria-hidden="true" className="fa fa-caret-left"></i>
               </button>
               <label>
+                <span className="offscreen">Date of trip</span>
                 <input type="text" placeholder="16.1.18" />
               </label>
               <button type="button" aria-label="Select a later date">
-                <i className="fa fa-caret-right"></i>
+                <i aria-hidden="true" className="fa fa-caret-right"></i>
               </button>
             </div>
             <div className="button-wrap right">
               <button type="button" aria-label="Date picker">
-                <i className="fa fa-calendar"></i>
+                <i aria-hidden="true" className="fa fa-calendar"></i>
               </button>
             </div>
             <div className="select right">
               <label>
+                <span className="offscreen">Type of trip</span>
                 <select>
                   <option>Type of trip</option>
                   <option>Alpine ski resort</option>
