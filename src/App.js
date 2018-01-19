@@ -61,7 +61,8 @@ class App extends Component {
                 <li><Link 
                   to="/"
                   ref="firstItem"
-                  onClick={this.pageFocus.bind(this, 'main')}>
+                  onClick={this.pageFocus.bind(this, 'main')}
+                  >
                     <i className="fa fa-fw fa-home" />
                     <span>Home</span>
                 </Link></li>

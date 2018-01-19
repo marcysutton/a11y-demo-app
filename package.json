@@ -3,17 +3,20 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "document-ready-promise": "^3.0.1",
     "prop-types": "^15.6.0",
     "react": "^16.1.1",
     "react-dom": "^16.1.1",
-    "react-modal": "^3.1.2",
+    "react-modal": "^3.1.11",
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.0.17",
+    "react-shadow": "^16.2.0",
+    "webcomponents.js": "^0.7.24",
     "wicg-inert": "^1.1.6"
   },
   "devDependencies": {
-    "axe-webdriverjs": "^1.2.0",
+    "axe-webdriverjs": "^2.0.0-alpha.1",
     "chai": "^3.5.0",
     "mocha": "^3.2.0"
   },

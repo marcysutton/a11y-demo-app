@@ -1,7 +1,12 @@
+import 'webcomponents.js';
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render } from 'react-dom';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
+import ready from 'document-ready-promise';
 
-ReactDOM.render(<App />, document.getElementById('root'));
-registerServiceWorker();
+ready().then(() => {
+	const mountNode = document.querySelector('#root');
+	mountNode && render(<App />, mountNode);
+	registerServiceWorker();
+});
