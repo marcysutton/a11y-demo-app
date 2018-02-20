@@ -10,7 +10,6 @@
     "react-modal": "^3.1.11",
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
-    "react-scripts": "1.0.17",
     "react-shadow": "^16.2.0",
     "webcomponents.js": "^0.7.24",
     "wicg-inert": "^1.1.6"
@@ -18,16 +17,21 @@
   "devDependencies": {
     "axe-webdriverjs": "^2.0.0-alpha.1",
     "chai": "^3.5.0",
-    "mocha": "^3.2.0"
+    "gh-pages": "^1.1.0",
+    "mocha": "^3.2.0",
+    "react-scripts": "1.0.17"
   },
   "config": {
     "port": "3006"
   },
+  "homepage" : "https://marcysutton.github.io/a11y-demo-app",
   "scripts": {
     "start": "PORT=$npm_package_config_port react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "integration": "mocha test/integration-a11y.js"
   }
 }
